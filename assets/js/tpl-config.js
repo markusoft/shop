@@ -1,7 +1,7 @@
 TemplateConfig = {
     license: 'ebc1a535a0b1e3acc17787a314509da7f7e20ed5c656447f001b49c5f444503d',
     name: 'Lazy',
-//    prefix: 'prsft-',
+   prefix: 'tpl-',
     animations: {
         fadeIn: {opacity: [0, 1]},
         fadeOut: {opacity: [1, 0]},
