@@ -1,0 +1,726 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Shop</title>
+        <meta name="description" content="Lazy Shop">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- icon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+        
+        <!-- safari icon -->
+        <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- manifest -->
+        <link rel="manifest" href="manifest.json">
+        
+        <!-- normalize -->
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <!-- fontello -->
+        <link rel="stylesheet" href="./plugins/fontello/css/fontello.css">
+        <link rel="stylesheet" href="./plugins/fontello/css/animation.css">
+        <!-- template -->
+        <link rel="stylesheet" href="./assets/css/template.css">
+		
+        <!-- template -->
+        <script defer src="./assets/js/tpl-config.js"></script>
+        <script defer src="./assets/js/tpl-mgelo.js"></script>
+        
+        <!-- page style -->
+        <link rel="stylesheet" href="./css/shop.css">
+        <link rel="stylesheet" href="./css/shop-desktop.css">
+        <link rel="stylesheet" href="./css/shop-tablet.css">
+        <link rel="stylesheet" href="./css/shop-mobile.css">
+        
+        <!-- page script -->
+        <script defer src="./js/data.js"></script>
+        <script defer src="./js/shop-ui.js"></script>
+        <script defer src="./js/shop.js"></script>
+        <script defer src="./js/shop-proto.js"></script>
+		
+    </head>
+    <body>
+        <!--[if IE]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <div id="grid">
+            <h1>Shop</h1>
+            
+            <section id="header">
+                <h2>Header</h2>
+
+                <section id="main-header">
+                    <h3>Main Header</h3>
+                    <a href="#shop"><span>Lazy </span><span>Shop</span></a>
+                    
+                    <div id="header-profile">
+                        <a href="#profile">
+                            <img src="./assets/img/placeholders/profile.svg" width="30" height="30" alt="product-image" class="profile-picture" />
+                            <span class="username">{{ Username }}</span>
+                        </a>
+                    </div>
+                    
+                    <div id="header-buttons">
+                        <a href="#login"><span>Login</span></a>
+                        <a href="#sign-up"><span>Sign-up</span></a>
+                    </div>
+                    
+                </section>
+                
+                <section id="sub-header">
+                    <h3>Sub Header</h3>
+                    
+                    <div id="sub-header-search">
+                        <select id="select-search-products" name="categories" class="tpl-input">
+                            <option value="">- All Product Categories -</option>
+                            <optgroup label="Automotive and Industrial">
+                                <option value="Car Parts and Accessories">Car Parts and Accessories</option>
+                                <option value="Machines and Robots">Machines and Robots</option>
+                            </optgroup>
+                            <optgroup label="Beauty and Health">
+                                <option value="Cosmetics">Cosmetics</option>
+                                <option value="Gym Supplements">Gym Supplements</option>
+                            </optgroup>
+                            <optgroup label="Category3">
+                                <option value="Option1">Option1</option>
+                                <option value="Option2">Option2</option>
+                                <option value="Option3">Option3</option>
+                            </optgroup>
+                        </select>
+                        <label for="input-search-products">Search:</label>
+                        <input id="input-search-products" type="text" name="search" placeholder="Search" class="tpl-input" />
+                        <button id="btn-search-products" aria-label="Search Products"><span>Search</span></button>
+                    </div>
+                    
+                    <div id="sub-header-controls">
+                        <a href="#wishlist" id="btn-wishlist" class="tpl-badge" data-badge="3" aria-label="Wishlist"><span>Wishlist</span></a>
+                        <a href="#cart" id="btn-cart" class="tpl-badge" data-badge="99" aria-label="Cart"><span>Cart</span></a>
+                    </div>
+                    
+                </section>
+                
+            </section>
+
+            <main>
+
+                <section id="login">
+                    <h2><span>Login</span></h2>
+                    <form id="form-login" class="tpl-form-top" method="post">
+                        <ul class="tpl-form-list">
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="login-username">Username</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="login-username" name="username" class="tpl-input" placeholder="Username" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="login-password">Password</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="password" id="login-password" name="password" class="tpl-input" placeholder="Password" />
+                                    <button class="tpl-btn">show</button>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#forgot-password"><span>Forgot Password</span></a>
+                            </li>
+                            <li class="tpl-form-submit">
+                                <input type="submit" class="tpl-btn" value="Login" />
+                            </li>
+                            <li>
+                                <span>Don't have an account? </span>
+                                <a href="#sign-up"><span>Sign Up</span></a>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                
+                <section id="forgot-password">
+                    <h2><span>Forgot Password</span></h2>
+                    <form id="form-forgot-password" class="tpl-form-top" method="post">
+                        <ul class="tpl-form-list">
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="forgot-password-username">Username</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="forgot-password-username" name="username" class="tpl-input" placeholder="Username" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-submit">
+                                <input type="submit" class="tpl-btn" value="Reset Password" />
+                            </li>
+                            <li>
+                                <a href="#login"><span>Log In</span></a>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                
+                <section id="sign-up">
+                    <h2><span>Sign-up</span></h2>
+                    
+                    <form id="form-signup" class="tpl-form-top" method="post">
+                        <ul class="tpl-form-list">
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="login-username">Username</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="signup-username" name="username" class="tpl-input" placeholder="Username" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="signup-password">Password</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="password" id="signup-password" name="password" class="tpl-input" placeholder="Password" />
+                                    <button class="tpl-btn">show</button>
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="signup-confirm-password">Confirm Password</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="password" id="signup-confirm-password" name="confirm-password" class="tpl-input" placeholder="Confirm Password" />
+                                    <button class="tpl-btn">show</button>
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="signup-address">Address</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="signup-address" name="address" class="tpl-input" placeholder="Address" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-submit">
+                                <input type="submit" class="tpl-btn" value="Sign Up" />
+                            </li>
+                            <li>
+                                <span>Already have an account? </span>
+                                <a href="#login"><span>Log In</span></a>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                
+                <section id="wishlist">
+                    <h2><span>Wishlist</span></h2>
+                    
+                    <table id="table-wishlist">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <article>
+                                        <h2><a href="#product-info"><span class="product-name">Item 1</span></a></h2>
+                                        <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="100" height="100" alt="product-image" /></a>
+                                        <a href="#product-info" class="product-description"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</div></a>
+                                    </article>
+                                </td>
+                                <td><span class="product-price">30</span></td>
+                                <td>
+                                    <button class="tpl-btn btn-add-to-cart" title="Add to Cart" aria-label="Add to Cart"><span>Add to cart</span></button>
+                                    <button class="tpl-btn btn-remove-from-wishlist" title="Remove from Wishlist" aria-label="Remove from Wishlist"><span>Remove</span></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <article>
+                                        <h2><a href="#product-info"><span class="product-name">Item 2</span></a></h2>
+                                        <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="100" height="100" alt="product-image" /></a>
+                                        <a href="#product-info" class="product-description"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</div></a>
+                                    </article>
+                                </td>
+                                <td><span class="product-price">30</span></td>
+                                <td>
+                                    <button class="tpl-btn btn-add-to-cart" title="Add to Cart" aria-label="Add to Cart"><span>Add to cart</span></button>
+                                    <button class="tpl-btn btn-remove-from-wishlist" title="Remove from Wishlist" aria-label="Remove from Wishlist"><span>Remove</span></button>
+                                </td>
+                            </tr>
+                            <tr class="empty">
+                                <td colspan="3"><a href="#shop"><span>Add items to your wishlist</span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+                
+                <section id="cart">
+                    <h2><span>Cart</span></h2>
+                    
+                    <form method="post" id="form-cart">
+                        <table id="table-cart">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <article>
+                                            <h2><a href="#product-info"><span class="product-name">Item 1</span></a></h2>
+                                            <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="100" height="100" alt="product-image" /></a>
+                                            <a href="#product-info" class="product-description"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</div></a>
+                                        </article>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="quantity" class="tpl-input" value="1" min="1" max="99" />
+                                    </td>
+                                    <td><span class="product-price">30</span></td>
+                                    <td>
+                                        <button class="tpl-btn btn-add-to-wishlist" title="Add to Wishlist" aria-label="Add to Wishlist"><span>Add to Wishlist</span></button>
+                                        <button class="tpl-btn btn-remove-from-cart" title="Remove from Cart" aria-label="Remove from Cart"><span>Remove</span></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <article>
+                                            <h2><a href="#product-info"><span class="product-name">Item 2</span></a></h2>
+                                            <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="100" height="100" alt="product-image" /></a>
+                                            <a href="#product-info" class="product-description"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</div></a>
+                                        </article>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="quantity" class="tpl-input" value="1" min="1" max="99" />
+                                    </td>
+                                    <td><span class="product-price">30</span></td>
+                                    <td>
+                                        <button class="tpl-btn btn-add-to-wishlist" title="Add to Wishlist" aria-label="Add to Wishlist"><span>Add to Wishlist</span></button>
+                                        <button class="tpl-btn btn-remove-from-cart" title="Remove from Cart" aria-label="Remove from Cart"><span>Remove</span></button>
+                                    </td>
+                                </tr>
+                                <tr class="empty">
+                                    <td colspan="4"><a href="#shop"><span>Add items to your cart</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Total</td>
+                                    <td colspan="2"><span id="total-price">0</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <input type="submit" id="btn-checkout" class="tpl-btn" value="Checkout" />
+                        
+                    </form>
+                </section>
+                
+                <section id="profile">
+                    <h2><span>Profile</span></h2>
+                    
+                    <section id="user-info">
+                        <h2>User Info</h2>
+                        <img src="./assets/img/placeholders/profile.svg" class="user-photo" alt="avatar" width="140" height="140" />
+                        <span class="username">{{ Username }}</span>
+                        <button id="btn-logout" class="tpl-btn">Logout</button>
+                    </section>
+                    
+                    <section id="orders">
+                        <h2><span>Orders</span></h2>
+
+                        <table id="table-orders">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <article>
+                                            <h2><a href="#product-info"><span class="product-name">Item 1</span></a></h2>
+                                            <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="100" height="100" alt="product-image" /></a>
+                                            <a href="#product-info" class="product-description"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</div></a>
+                                        </article>
+                                    </td>
+                                    <td><span class="product-quantity">1</span></td>
+                                    <td><span class="product-price">30</span></td>
+                                    <td><span>To Ship</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <article>
+                                            <h2><a href="#product-info"><span class="product-name">Item 2</span></a></h2>
+                                            <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="100" height="100" alt="product-image" /></a>
+                                            <a href="#product-info" class="product-description"><div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</div></a>
+                                        </article>
+                                    </td>
+                                    <td><span class="product-quantity">1</span></td>
+                                    <td><span class="product-price">30</span></td>
+                                    <td><span>Received</span></td>
+                                </tr>
+                                <tr class="empty">
+                                    <td colspan="4"><a href="#shop"><span>No Orders Yet</span></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </section>
+                    
+                </section>
+                
+                <section id="checkout">
+                    <h2><span>Checkout</span></h2>
+                    <form id="form-checkout" class="tpl-form-top" method="post">
+                        <ul class="tpl-form-list">
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="checkout-card-number">Card No.</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="checkout-card-number" name="card-number" class="tpl-input" placeholder="Card Number" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="checkout-cvv">CVV</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <input type="text" id="checkout-cvv" name="cvv" class="tpl-input" maxlength="4" placeholder="CVV" />
+                                </div>
+                            </li>
+                            <li class="tpl-form-item">
+                                <div class="tpl-form-label">
+                                    <label for="checkout-year">Card Year</label>
+                                </div>
+                                <div class="tpl-form-input">
+                                    <select id="checkout-year" name="year" class="tpl-input">
+                                        <option value="">- Card Year -</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="tpl-form-submit">
+                                <input type="submit" class="tpl-btn" value="Checkout" />
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+                
+                <section id="product-info">
+                    <h2><span>Product Info</span></h2>
+                    <article>
+                        <h3><span class="product-name">{{ Product Name }}</span></h3>
+                        <div class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></div>
+                        <div class="product-price"><span>{{ Price }}</span></div>
+                        <ul class="list-product-images">
+                            <li><a href="#"><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></a></li>
+                            <li><a href="#"><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></a></li>
+                            <li><a href="#"><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></a></li>
+                            <li><a href="#"><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></a></li>
+                        </ul>
+                        <div class="product-description"><p>{{ Product Description }}</p></div>
+                        <div class="product-buttons">
+                            <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                            <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                            <button class="tpl-btn btn-remove-from-wishlist" aria-label="Remove from Wishlist"><span>remove from wishlist</span></button>
+                            <button class="tpl-btn btn-remove-from-cart" aria-label="Remove from Cart"><span>remove from cart</span></button>
+                        </div>
+                    </article>
+                </section>
+                
+                <section id="shop">
+                    <h2><span>Shop</span></h2>
+                    
+                    <section id="product-categories">
+                        <h2><span>Product Categories</span></h2>
+                        <ul id="list-product-categories" class="tpl-menu collapse">
+                            <li><div><a href="#"><span>Automotive and Industrial</span></a></div></li>
+                            <li>
+                                <div><a href="#"><span>Beauty and Health</span></a></div>
+                                <ul>
+                                    <li>
+                                        <div><a href="#"><span>Automotive and Industrial</span></a></div>
+                                    </li>
+                                    <li><div><a href="#"><span>Beauty and Health</span></a></div></li>
+                                    <li><div><a href="#"><span>Books</span></a></div></li>
+                                    <li><div><a href="#"><span>Clothing, Shoes and Jewelry</span></a></div></li>
+                                    <li><div><a href="#"><span>Electronics, Laptops and Office</span></a></div></li>
+                                    <li><div><a href="#"><span>Home, Garden and Tools</span></a></div></li>
+                                    <li><div><a href="#"><span>Sports and Outdoors</span></a></div></li>
+                                </ul>
+                            </li>
+                            <li><div><a href="#"><span>Books</span></a></div></li>
+                            <li><div><a href="#"><span>Clothing, Shoes and Jewelry</span></a></div></li>
+                            <li><div><a href="#"><span>Electronics, Laptops and Office</span></a></div></li>
+                            <li><div><a href="#"><span>Home, Garden and Tools</span></a></div></li>
+                            <li><div><a href="#"><span>Sports and Outdoors</span></a></div></li>
+                            <li class="empty"><div><a href="#"><span>No Categories</span></a></div></li>
+                        </ul>
+                    </section>
+
+                    <section id="products">
+                        <h2><span>Products</span></h2>
+                        
+                        <div id="product-filters">
+                            <label for="products-sort">sort by:</label>
+                            <select name="sort" id="products-sort" class="tpl-input">
+                                <option value="name">name</option>
+                                <option value="price">price</option>
+                            </select>
+                            <button class="tpl-btn" id="btn-product-sort" title="Ascending" aria-label="Order"><span>Ascending</span></button>
+                            <button class="tpl-btn" id="btn-grid-view" title="Show Grid View" aria-label="Grid View"><span>Grid View</span></button>
+                            <button class="tpl-btn" id="btn-list-view" title="Show List View" aria-label="List View"><span>List View</span></button>
+                        </div>
+
+                        <ul id="list-products" class="grid">
+                            <li>
+                                <article>
+                                    <h3><span class="product-name">{{ Product Name }}</span></h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>{{ Price }}</span></a>
+                                    <ul class="list-product-images">
+                                        <li><a href="#"><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></a></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>{{ Product Description }}</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 1</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>999</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>888</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 3</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>765</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 4</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>123</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 5</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>13</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 6</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>29</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 7</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>789</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 8</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>555</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li>
+                                <article>
+                                    <h3>Item 9</h3>
+                                    <a href="#product-info" class="product-image"><img src="./assets/img/placeholders/square.svg" width="170" height="170" alt="product-image" /></a>
+                                    <a href="#product-info" class="product-price"><span>812</span></a>
+                                    <ul class="list-product-images">
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                        <li><img src="./assets/img/placeholders/square.svg" width="40" height="40" alt="product-image" /></li>
+                                    </ul>
+                                    <a href="#product-info" class="product-description"><div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, eius, animi sed optio in quas odit perspiciatis mollitia dicta hic dolores deserunt maxime qui culpa est quia atque. Quas, voluptates!</p></div></a>
+                                    <div class="product-buttons">
+                                        <button class="tpl-btn btn-add-to-wishlist" aria-label="Add to Wishlist"><span>add to wishlist</span></button>
+                                        <button class="tpl-btn btn-add-to-cart" aria-label="Add to Cart"><span>add to cart</span></button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="empty">
+                                <span>No Products to Show</span>
+                            </li>
+                        </ul>
+                        
+                    </section>
+ 
+                </section>
+
+            </main>
+            
+            <nav id="main-navigation">
+                <h2><span>Main Navigation</span></h2>
+                <ul id="list-navigation" class="tpl-menu">
+                    <li class="ripple"><div><a href="#shop" class="active"><span>Shop</span></a></div></li>
+                    <li><div><a href="#wishlist"><span>Wishlist</span></a><div class="tpl-badge" data-badge="3">&nbsp;</div></div></li>
+                    <li><div><a href="#cart"><span>Cart</span></a><div class="tpl-badge" data-badge="3">&nbsp;</div></div></li>
+                    <li><div><a href="#profile"><span>Profile</span></a></div></li>
+                </ul>
+            </nav>
+            
+            <footer id="footer">
+                &copy;
+            </footer>
+            
+        </div>
+        
+        <ul id="site-color-picker">
+            <li class="custom">
+                <label>
+                    <span class="icon icon-sun-1">&nbsp;</span>
+                    <input type="radio" name="color" value="custom" checked="checked" />
+                    <span class="label">light</span>
+                </label>
+            </li>
+            <li class="dark">
+                <label>
+                    <span class="icon icon-moon-inv">&nbsp;</span>
+                    <input type="radio" name="color" value="dark" />
+                    <span class="label">dark</span>
+                </label>
+            </li>
+            <li class="pink">
+                <label>
+                    <span class="icon icon-heart-2">&nbsp;</span>
+                    <input type="radio" name="color" value="pink" />
+                    <span class="label">pink</span>
+                </label>
+            </li>
+        </ul>
+
+    </body>
+</html>

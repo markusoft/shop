@@ -1,0 +1,160 @@
+/* 
+ * =============================================================================
+ * Author: Mark Angelo Angulo
+ * =============================================================================
+ */
+
+@media only screen and (max-width: 991px) {
+    
+/* 
+ * -----------------------------------------------------------------------------
+ *  Variables
+ * -----------------------------------------------------------------------------
+ */
+
+:root {
+    --default-spacing: .4rem;
+}
+    
+/* 
+ * -----------------------------------------------------------------------------
+ *  GRID
+ * -----------------------------------------------------------------------------
+ */
+
+h1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: auto;
+    /*grid-template-rows: auto 1fr;*/
+    grid-template-rows: 7.4rem calc(100% - 7.4rem);
+    grid-template-areas:
+        "header"
+        "main";
+}
+    
+/*
+ * -----------------------------------------------------------------------------
+ *  POSITION
+ * -----------------------------------------------------------------------------
+ */
+
+    main {
+        position: relative;
+    }
+
+/* 
+ * -----------------------------------------------------------------------------
+ *  STYLE
+ * -----------------------------------------------------------------------------
+ */
+    #main-header,
+    #sub-header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    main {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+/* ============================================================== Main Header */
+#main-header {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-1-500);
+    padding: .5rem 1rem;
+}
+
+#sub-header {
+    justify-content: center;
+}
+
+#sub-header .tpl-badge::after {
+    top: -1.2rem;
+    left: -.6rem;
+}
+
+#select-search-products {
+    max-width: 130px;
+}
+
+#input-search-products {
+    max-width: 130px;
+}
+
+#btn-wishlist {
+    margin-right: 0;
+}
+
+#btn-wishlist > span {
+    display: none;
+}
+
+#btn-cart > span {
+    display: none;
+}
+
+#list-products .btn-add-to-cart,
+#list-products .btn-add-to-wishlist,
+#btn-product-sort,
+#btn-grid-view,
+#btn-list-view {
+    padding-right: 1px;
+}
+
+#list-products .btn-add-to-cart::before,
+#list-products .btn-add-to-wishlist::before {
+    font-size: 1.3rem;
+}
+
+#btn-product-sort::before,
+#btn-grid-view::before,
+#btn-list-view::before {
+    font-size: 1rem;
+}
+
+#product-categories {
+    display: none;
+}
+
+#list-products .btn-add-to-cart > span,
+#list-products .btn-add-to-wishlist > span,
+#btn-product-sort > span,
+#btn-grid-view > span,
+#btn-list-view > span {
+    display: none;
+}
+    
+/* -------------------------------------------------------- List Product Grid */
+
+#list-products.list > li > article {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 40px 126px auto;
+    grid-template-rows: 1.3rem 1.3rem 50px 1.9rem;
+}
+
+#list-products.list .product-image img {
+    width: 100%;
+    height: auto;
+}
+
+#list-products.list .list-product-images li:nth-child(n+4) {
+    display: none;
+}
+
+
+/* ================================================================== Profile */
+main > section.scroll {
+    overflow-y: scroll;
+    height: calc(100% - 5rem);
+}
+    
+}
+
