@@ -215,9 +215,13 @@ document.addEventListener('DOMContentLoaded', function (){
                         error.innerText = message;
                         error.className = `${PREFIX}form-error-message`;
 
-                        input.closest(`.${PREFIX}form-item`).classList.remove(`${PREFIX}form-success`);
-                        input.closest(`.${PREFIX}form-item`).classList.add(`${PREFIX}form-error`);
-                        input.closest(`.${PREFIX}form-input`).append(error);
+						if( input.closest(`.${PREFIX}form-item`) ) {
+							input.closest(`.${PREFIX}form-item`).classList.remove(`${PREFIX}form-success`);
+							input.closest(`.${PREFIX}form-item`).classList.add(`${PREFIX}form-error`);
+							input.closest(`.${PREFIX}form-input`).append(error);
+						}
+
+                        
                     }
                     
                     return false;
